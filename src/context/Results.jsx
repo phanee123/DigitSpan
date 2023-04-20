@@ -17,10 +17,6 @@ export const ResultsProvider = ({ children }) => {
   const [isRetry, setIsRetry] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate("/test");
-  }, [results.length]);
-
   const value = { results, setResults, currentStep, setCurrentStep, isRetry, setIsRetry };
   return <ResultsContext.Provider value={value}>{children}</ResultsContext.Provider>;
 };

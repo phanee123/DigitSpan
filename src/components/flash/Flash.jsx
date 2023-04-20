@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Flash = ({ toFlash }) => {
-  console.log({ toFlash });
   const [flashValue, setFlashValue] = useState();
   const navigate = useNavigate();
 
