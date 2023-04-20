@@ -1,18 +1,23 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Instructions from "./pages/Instructions";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Instructions from "./page/Instructions";
 import "./App.css";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Instructions />,
-  },
-]);
+import NumberPad from "./page/numberpad/NumberPad";
+import Flash from "./components/flash/Flash";
+import Test from "./page/test";
+import { ResultsProvider } from "./context/Results";
 function App() {
   return (
     <main className="main-container">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <ResultsProvider>
+          <Routes>
+            <Route path="/" element={<Instructions />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/numberpad" element={<NumberPad />} />
+          </Routes>
+        </ResultsProvider>
+      </BrowserRouter>
     </main>
   );
 }
