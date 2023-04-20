@@ -1,43 +1,23 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Instruction2 from "./components/Instruction2";
-import Instruction3 from "./components/Instruction3";
-import Instruction4 from "./components/Instruction4";
-import Instruction5 from "./components/Instruction5";
-import Instruction1 from "./components/Instruction1";
-import ExperimentStart from "./components/ExperimentStart";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Instructions from "./page/Instructions";
 import "./App.css";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Instruction1 />,
-  },
-  {
-    path: "/inst2",
-    element: <Instruction2 />,
-  },
-  {
-    path: "/inst3",
-    element: <Instruction3 />,
-  },
-  {
-    path: "/inst4",
-    element: <Instruction4 />,
-  },
-  {
-    path: "/inst5",
-    element: <Instruction5 />,
-  },
-  {
-    path: "/start",
-    element: <ExperimentStart />,
-  },
-]);
+import NumberPad from "./page/numberpad/NumberPad";
+import Flash from "./components/flash/Flash";
+import Test from "./page/test";
+import { ResultsProvider } from "./context/Results";
 function App() {
   return (
     <main className="main-container">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <ResultsProvider>
+          <Routes>
+            <Route path="/" element={<Instructions />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/numberpad" element={<NumberPad />} />
+          </Routes>
+        </ResultsProvider>
+      </BrowserRouter>
     </main>
   );
 }

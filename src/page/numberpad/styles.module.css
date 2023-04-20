@@ -1,0 +1,55 @@
+.container {
+  width: 70vh;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.numberpadWrapper {
+  width: 54vh;
+  height: 54vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.actionsWrapper {
+  width: 54vh;
+  height: 8vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.buttondigit {
+  outline: none;
+  border: none;
+  background-color: #868e96;
+  font-size: 3rem;
+  color: #fff;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.buttonAction {
+  outline: none;
+  border: none;
+  background-color: #868e96;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.buttondigit:hover,
+.buttonAction:hover {
+  background-color: #fff;
+  color: red;
+  outline: 1px solid #868e96;
+}
+
+.buttondigit:target,
+.buttonAction:target {
+  background-color: #000;
+}
