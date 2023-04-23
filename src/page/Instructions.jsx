@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { INSTRUCTION_STEPS_FORWARD, INSTRUCTION_STEPS_BACKWARD } from "../constants/InstructionSteps";
-import Instruction from "../components/instruction";
+import Instruction from "../components/instruction/Instruction";
 import { ResultsContext } from "../context/Results";
 
 const Instructions = () => {
