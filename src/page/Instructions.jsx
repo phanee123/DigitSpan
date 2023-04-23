@@ -9,12 +9,13 @@ const Instructions = () => {
   const navigate = useNavigate();
   const { flowStatus } = useContext(ResultsContext);
   const CURRENT_INSTRUCTIONS = flowStatus === "FORWARD" ? INSTRUCTION_STEPS_FORWARD : INSTRUCTION_STEPS_BACKWARD;
-  const { stepIndex, buttonLabel, content } = CURRENT_INSTRUCTIONS[currentStep];
+  const { stepIndex, buttonLabel1='', content, buttonLabel2=""} = CURRENT_INSTRUCTIONS[currentStep];
 
-  const clickHandler =
+  const handleNextClick =
     stepIndex === CURRENT_INSTRUCTIONS.length ? () => navigate("/test") : () => setCurrentStep((prev) => prev + 1);
+    const handleBackClick = () => setCurrentStep((prev) => prev - 1);
   return (
-    <Instruction handleOnClick={clickHandler} label={buttonLabel}>
+    <Instruction handleNextClick={handleNextClick} label1={buttonLabel1} label2={buttonLabel2} handleBackClick = {handleBackClick} > 
       {content}
     </Instruction>
   );

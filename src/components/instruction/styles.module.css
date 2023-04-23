@@ -8,8 +8,19 @@
   flex-direction: column;
   gap: 32px;
 }
-
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap:12px;
+  align-items: center;
+  justify-content: center;
+}
+.buttonContainer>*:only-child{
+  margin: 0 auto;
+}
 .button {
+  display: block;
   outline: 0;
   border: 0;
   padding: 8px 32px;
@@ -19,6 +30,24 @@
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
+}
+.buttonBack{
+  display: block;
+  outline: 0;
+  border: 0;
+  padding: 8px 32px;
+  background-color: #ffff;
+  color: #6666ff;
+  outline: 1px solid #6666ff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.buttonBack:hover{
+  color:#4d4dff
+
 }
 .button:hover {
   background-color: #4d4dff;
