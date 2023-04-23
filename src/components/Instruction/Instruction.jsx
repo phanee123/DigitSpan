@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./styles.module.css";
-import Parser from "html-react-parser";
+// import Parser from "html-react-parser";
 
 const Instruction = (props) => {
   const { children, label } = props;
   return (
     <div className={styles.card}>
-      {Parser(children)}
+      {/* {Parser(children)} */}
       <button onClick={props.handleOnClick} className={styles.button}>
         {label}
       </button>
