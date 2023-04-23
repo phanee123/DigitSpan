@@ -4,12 +4,13 @@ import styles from "./styles.module.css";
 import { ResultsContext } from "../../context/Results";
 import { generateRandomNumbers, arrayEquals } from "../../common/common";
 import { useNavigate } from "react-router-dom";
+import sound from "../../assets/click.wav";
 
 const NumberPad = () => {
   const [userInput, setUserInput] = useState([]);
   const navigate = useNavigate();
   const { results, setResults, currentStep, setCurrentStep, flowStatus, setFlowStatus } = useContext(ResultsContext);
-  const clickAudio = new Audio("../../../src/assets/click.wav");
+  const clickAudio = new Audio(sound);
 
   const digitClickHandler = (currentInput) => {
     clickAudio.play();
