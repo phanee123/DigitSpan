@@ -4,7 +4,11 @@ import styles from "./styles.module.css";
 import { ResultsContext } from "../../context/Results";
 import { generateRandomNumbers, arrayEquals } from "../../common/common";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import sound from "../../assets/click.wav"
+=======
+import sound from "../../assets/click.wav";
+>>>>>>> 86e22671b35bea8090e5e4e4dfe7c84d74d0d6f8
 
 const NumberPad = () => {
   const [userInput, setUserInput] = useState([]);
