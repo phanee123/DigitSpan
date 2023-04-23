@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import INSTRUCTION_STEPS from "../constants/InstructionSteps";
+import { INSTRUCTION_STEPS_FORWARD, INSTRUCTION_STEPS_BACKWARD } from "../constants/InstructionSteps";
 import Instruction from "../components/instruction/Instruction";
+import { ResultsContext } from "../context/Results";
 
 const Instructions = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const navigate = useNavigate();
-  const { stepIndex, buttonLabel, content } = INSTRUCTION_STEPS[currentStep];
+  const { flowStatus } = useContext(ResultsContext);
+  const CURRENT_INSTRUCTIONS = flowStatus === "FORWARD" ? INSTRUCTION_STEPS_FORWARD : INSTRUCTION_STEPS_BACKWARD;
+  const { stepIndex, buttonLabel, content } = CURRENT_INSTRUCTIONS[currentStep];
 
-  const clickHandler = stepIndex === 6 ? () => navigate("/test") : () => setCurrentStep((prev) => prev + 1);
+  const clickHandler =
+    stepIndex === CURRENT_INSTRUCTIONS.length ? () => navigate("/test") : () => setCurrentStep((prev) => prev + 1);
   return (
     <Instruction handleOnClick={clickHandler} label={buttonLabel}>
       {content}

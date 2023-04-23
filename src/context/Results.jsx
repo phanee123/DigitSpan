@@ -1,22 +1,25 @@
 import { createContext, useEffect, useState } from "react";
 import { generateRandomNumbers } from "../common/common";
 import { useNavigate } from "react-router-dom";
+import { START_TEST_WITH_DIGIT } from "../constants/general";
 
 export const ResultsContext = createContext({
   results: [],
   setResults: () => {},
   currentStep: 3,
   setCurrentStep: () => {},
-  isRetry: false,
-  setIsRetry: () => {},
+  flowStatus: "FORWARD",
+  setFlowStatus: () => {},
 });
 
 export const ResultsProvider = ({ children }) => {
-  const [currentStep, setCurrentStep] = useState(3);
-  const [results, setResults] = useState([{ systemInput: generateRandomNumbers(currentStep) }]);
-  const [isRetry, setIsRetry] = useState(false);
+  const [currentStep, setCurrentStep] = useState(START_TEST_WITH_DIGIT);
+  const [flowStatus, setFlowStatus] = useState("FORWARD");
+  const [results, setResults] = useState([
+    { systemInput: generateRandomNumbers(currentStep), numOfDigits: START_TEST_WITH_DIGIT, flowStatus },
+  ]);
   const navigate = useNavigate();
 
-  const value = { results, setResults, currentStep, setCurrentStep, isRetry, setIsRetry };
+  const value = { results, setResults, currentStep, setCurrentStep, flowStatus, setFlowStatus };
   return <ResultsContext.Provider value={value}>{children}</ResultsContext.Provider>;
 };

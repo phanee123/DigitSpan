@@ -49,6 +49,12 @@
   outline: 1px solid #868e96;
 }
 
+.buttonAction:disabled {
+  cursor: not-allowed;
+  background-color: #868e96;
+  color: #fff;
+}
+
 .buttondigit:target,
 .buttonAction:target {
   background-color: #000;

@@ -1,4 +1,4 @@
-const INSTRUCTION_STEPS = [
+const INSTRUCTION_STEPS_FORWARD = [
   {
     stepIndex: 1,
     content: `<h2>Welcome to the experiment!</h2>
@@ -53,6 +53,7 @@ const INSTRUCTION_STEPS = [
         <p>Use the mouse to enter the numbers.</p>`,
     buttonLabel: "Next",
   },
+
   {
     stepIndex: 6,
     content: `<p>Experiment will start after you end instructions.</p>`,
@@ -60,4 +61,18 @@ const INSTRUCTION_STEPS = [
   },
 ];
 
-export default INSTRUCTION_STEPS;
+const INSTRUCTION_STEPS_BACKWARD = [
+  {
+    stepIndex: 1,
+    content: `
+        <p>BACK Ward Instructions</p>`,
+    buttonLabel: "Next",
+  },
+  {
+    stepIndex: 2,
+    content: `<p>Experiment will start after you end instructions.</p>`,
+    buttonLabel: "End Instructions",
+  },
+];
+
+export { INSTRUCTION_STEPS_FORWARD, INSTRUCTION_STEPS_BACKWARD };

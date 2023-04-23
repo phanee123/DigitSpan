@@ -6,6 +6,7 @@ import NumberPad from "./page/numberpad/NumberPad";
 import Flash from "./components/flash/Flash";
 import Test from "./page/test";
 import { ResultsProvider } from "./context/Results";
+import ExitWithDownloadExcel from "./page/ExitWithDownloadExcel";
 function App() {
   return (
     <main className="main-container">
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Instructions />} />
             <Route path="/test" element={<Test />} />
             <Route path="/numberpad" element={<NumberPad />} />
+            <Route path="/exitWithExcel" element={<ExitWithDownloadExcel />} />
           </Routes>
         </ResultsProvider>
       </BrowserRouter>

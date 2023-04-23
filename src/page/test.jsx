@@ -5,7 +5,10 @@ import Flash from "../components/flash/Flash";
 
 const Test = () => {
   const { results, currentStep } = useContext(ResultsContext);
-  return <Flash toFlash={results[currentStep - 3]?.systemInput} />;
+
+  const valuesToFlash = results[results.length - 1]?.systemInput;
+  console.log(valuesToFlash);
+  return <Flash toFlash={results[results.length - 1]?.systemInput} />;
 };
 
 export default Test;
