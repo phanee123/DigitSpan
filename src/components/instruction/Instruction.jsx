@@ -8,12 +8,12 @@ const Instruction = (props) => {
       {Parser(children)}
       <div className={styles.buttonContainer}>
         {label1 && (
-          <button onClick={props.handleBackClick} className={styles.buttonBack}>
+          <button onClick={handleBackClick} className={styles.buttonBack}>
             {label1}
           </button>
         )}
         {label2 && (
-          <button onClick={props.handleNextClick} className={styles.button}>
+          <button onClick={handleNextClick} className={styles.button}>
             {label2}
           </button>
         )}
