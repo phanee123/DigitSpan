@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { ResultsContext } from "../../context/Results";
 import { generateRandomNumbers, arrayEquals } from "../../common/common";
 import { useNavigate } from "react-router-dom";
-import sound from "../../assets/click.wav"
+import sound from "../../assets/click.wav";
 
 const NumberPad = () => {
   const [userInput, setUserInput] = useState([]);
@@ -63,8 +63,8 @@ const NumberPad = () => {
       let currentStepResultValue = results[results.length - 1];
       currentStepResultValue = {
         ...currentStepResultValue,
-        userInput,
         flowStatus,
+        userInput,
         isTrue: arrayEquals(currentStepResultValue.systemInput, userInput, flowStatus),
       };
 
@@ -89,7 +89,7 @@ const NumberPad = () => {
             numOfDigits: START_TEST_WITH_DIGIT,
           });
           setResults(currentResults);
-          navigate("/");
+          navigate("/intervention");
         }
       } else if (currentResults.length === (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 3) {
         setCurrentStep(START_TEST_WITH_DIGIT);
@@ -99,7 +99,7 @@ const NumberPad = () => {
           numOfDigits: START_TEST_WITH_DIGIT,
         });
         setResults(currentResults);
-        navigate("/");
+        navigate("/intervention");
         // move to reverse
       } else {
         currentResults.push({ systemInput: generateRandomNumbers(currentStep), numOfDigits: currentStep, flowStatus });

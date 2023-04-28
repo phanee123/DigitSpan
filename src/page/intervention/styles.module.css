@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.sum {
+  text-align: center;
+  /* font-size: 18px; */
+}
+.inputStyles {
+  font-size: 1.75rem;
+  width: 8rem;
+  height: 2rem;
+  padding: 8px 16px;
+}
+.questions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 4rem;
+}
+
+@media (max-width: 768px) {
+  .inputStyles {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  .questions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

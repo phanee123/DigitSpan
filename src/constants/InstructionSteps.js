@@ -34,8 +34,8 @@ const INSTRUCTION_STEPS_FORWARD = [
         <p>1.The subject has to sit 1-2 ft away from the screen.</p>
         <p>2.The subject has to sit in an isolated room so that he/she will not get distracted.</p>
         <p>3.If the subject is using phones/ tabs then its mandatory to put the phone on DND mode.</p>`,
-        buttonLabel1: "Previous",
-        buttonLabel2: "Next",
+    buttonLabel1: "Previous",
+    buttonLabel2: "Next",
   },
   {
     stepIndex: 4,
@@ -45,8 +45,8 @@ const INSTRUCTION_STEPS_FORWARD = [
         <p>The word "Ready" will appear on the screen.</p>
         <p>After that, few digits will be presented on the screen for a short duration on the screen.</p>
         <p>Remember the numbers you see.</p>`,
-        buttonLabel1: "Previous",
-        buttonLabel2: "Next",
+    buttonLabel1: "Previous",
+    buttonLabel2: "Next",
   },
   {
     stepIndex: 5,
@@ -54,8 +54,8 @@ const INSTRUCTION_STEPS_FORWARD = [
         <p>Once you have remembered the numbers presented, you need to repeat them.</p>
         <p>You will see a key pad on the screen to enter your responses.</p>
         <p>Use the mouse to enter the numbers.</p>`,
-        buttonLabel1: "Previous",
-        buttonLabel2: "Next",
+    buttonLabel1: "Previous",
+    buttonLabel2: "Next",
   },
 
   {
