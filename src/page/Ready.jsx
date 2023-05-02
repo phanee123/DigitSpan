@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import readyAudio from "../assets/ready.mp3";
+import readyAudio from "../assets/readyaudio.mp3";
 
 const Ready = () => {
   const navigate = useNavigate();
