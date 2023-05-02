@@ -70,7 +70,7 @@ const INSTRUCTION_STEPS_BACKWARD = [
   {
     stepIndex: 1,
     content: `
-        <p>BACK Ward Instructions</p>`,
+        <p>Reverse Condition Instructions</p>`,
     buttonLabel2: "Next",
   },
   {

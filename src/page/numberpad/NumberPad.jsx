@@ -1,5 +1,9 @@
 import { useState, useContext } from "react";
-import { NUMPAD_DIGITS, END_TEST_WITH_DIGIT, START_TEST_WITH_DIGIT } from "../../constants/general";
+import {
+  NUMPAD_DIGITS,
+  END_TEST_WITH_DIGIT,
+  START_TEST_WITH_DIGIT,
+} from "../../constants/general";
 import styles from "./styles.module.css";
 import { ResultsContext } from "../../context/Results";
 import { generateRandomNumbers, arrayEquals } from "../../common/common";
@@ -9,7 +13,14 @@ import sound from "../../assets/click.wav";
 const NumberPad = () => {
   const [userInput, setUserInput] = useState([]);
   const navigate = useNavigate();
-  const { results, setResults, currentStep, setCurrentStep, flowStatus, setFlowStatus } = useContext(ResultsContext);
+  const {
+    results,
+    setResults,
+    currentStep,
+    setCurrentStep,
+    flowStatus,
+    setFlowStatus,
+  } = useContext(ResultsContext);
   const clickAudio = new Audio(sound);
 
   const digitClickHandler = (currentInput) => {
@@ -29,7 +40,11 @@ const NumberPad = () => {
         ...currentStepResultValue,
         userInput,
         flowStatus,
-        isTrue: arrayEquals(currentStepResultValue.systemInput, userInput, flowStatus),
+        isTrue: arrayEquals(
+          currentStepResultValue.systemInput,
+          userInput,
+          flowStatus
+        ),
       };
 
       const currentResults = [...results];
@@ -37,11 +52,17 @@ const NumberPad = () => {
       currentResults.push(currentStepResultValue);
       if (
         currentResults.length % 3 === 0 &&
-        currentResults.length !== (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 6
+        currentResults.length !==
+          (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 6
       ) {
-        const checkLast3False = currentResults.slice(-3).some((eachResult) => eachResult.isTrue);
+        const checkLast3False = currentResults
+          .slice(-3)
+          .some((eachResult) => eachResult.isTrue);
         if (checkLast3False) {
-          currentResults.push({ systemInput: generateRandomNumbers(currentStep + 1), numOfDigits: currentStep + 1 });
+          currentResults.push({
+            systemInput: generateRandomNumbers(currentStep + 1),
+            numOfDigits: currentStep + 1,
+          });
           setCurrentStep(currentStep + 1);
           setResults(currentResults);
           navigate("/test");
@@ -50,12 +71,19 @@ const NumberPad = () => {
           // terminate the flow & download the excel
           navigate("/exitWithExcel");
         }
-      } else if (currentResults.length === (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 6) {
+      } else if (
+        currentResults.length ===
+        (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 6
+      ) {
         setResults(currentResults);
         navigate("/exitWithExcel");
         // terminate the flow & download the excel
       } else {
-        currentResults.push({ systemInput: generateRandomNumbers(currentStep), numOfDigits: currentStep, flowStatus });
+        currentResults.push({
+          systemInput: generateRandomNumbers(currentStep),
+          numOfDigits: currentStep,
+          flowStatus,
+        });
         setResults(currentResults);
         navigate("/test");
       }
@@ -65,7 +93,11 @@ const NumberPad = () => {
         ...currentStepResultValue,
         flowStatus,
         userInput,
-        isTrue: arrayEquals(currentStepResultValue.systemInput, userInput, flowStatus),
+        isTrue: arrayEquals(
+          currentStepResultValue.systemInput,
+          userInput,
+          flowStatus
+        ),
       };
 
       const currentResults = [...results];
@@ -73,11 +105,17 @@ const NumberPad = () => {
       currentResults.push(currentStepResultValue);
       if (
         currentResults.length % 3 === 0 &&
-        currentResults.length !== (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 3
+        currentResults.length !==
+          (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 3
       ) {
-        const checkLast3False = currentResults.slice(-3).some((eachResult) => eachResult.isTrue);
+        const checkLast3False = currentResults
+          .slice(-3)
+          .some((eachResult) => eachResult.isTrue);
         if (checkLast3False) {
-          currentResults.push({ systemInput: generateRandomNumbers(currentStep + 1), numOfDigits: currentStep + 1 });
+          currentResults.push({
+            systemInput: generateRandomNumbers(currentStep + 1),
+            numOfDigits: currentStep + 1,
+          });
           setCurrentStep(currentStep + 1);
           setResults(currentResults);
           navigate("/test");
@@ -89,9 +127,13 @@ const NumberPad = () => {
             numOfDigits: START_TEST_WITH_DIGIT,
           });
           setResults(currentResults);
-          navigate("/intervention");
+          // navigate("/intervention");
+          navigate("/");
         }
-      } else if (currentResults.length === (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 3) {
+      } else if (
+        currentResults.length ===
+        (END_TEST_WITH_DIGIT - START_TEST_WITH_DIGIT + 1) * 3
+      ) {
         setCurrentStep(START_TEST_WITH_DIGIT);
         setFlowStatus("REVERSE");
         currentResults.push({
@@ -99,10 +141,16 @@ const NumberPad = () => {
           numOfDigits: START_TEST_WITH_DIGIT,
         });
         setResults(currentResults);
-        navigate("/intervention");
+        navigate("/");
+        // navigate("/intervention");
+
         // move to reverse
       } else {
-        currentResults.push({ systemInput: generateRandomNumbers(currentStep), numOfDigits: currentStep, flowStatus });
+        currentResults.push({
+          systemInput: generateRandomNumbers(currentStep),
+          numOfDigits: currentStep,
+          flowStatus,
+        });
         setResults(currentResults);
         navigate("/test");
       }
@@ -113,16 +161,28 @@ const NumberPad = () => {
     <div className={styles.container}>
       <div className={styles.numberpadWrapper}>
         {NUMPAD_DIGITS.map((digit) => (
-          <button className={styles.buttondigit} key={digit} onClick={() => digitClickHandler(digit)}>
+          <button
+            className={styles.buttondigit}
+            key={digit}
+            onClick={() => digitClickHandler(digit)}
+          >
             {digit}
           </button>
         ))}
       </div>
       <div className={styles.actionsWrapper}>
-        <button className={styles.buttonAction} disabled={!userInput.length} onClick={clearHandler}>
+        <button
+          className={styles.buttonAction}
+          disabled={!userInput.length}
+          onClick={clearHandler}
+        >
           Clear
         </button>
-        <button className={styles.buttonAction} disabled={!userInput.length} onClick={submitHandler}>
+        <button
+          className={styles.buttonAction}
+          disabled={!userInput.length}
+          onClick={submitHandler}
+        >
           Submit
         </button>
       </div>
