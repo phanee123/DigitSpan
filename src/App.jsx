@@ -8,6 +8,8 @@ import Ready from "./page/Ready";
 import PageNotFound from "./page/PageNotFound";
 import { ResultsProvider } from "./context/Results";
 import Intervention from "./page/intervention";
+import LastPage from "./page/LastPage";
+
 import "./App.css";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
             <Route path="/numberpad" element={<NumberPad />} />
             <Route path="/intervention" element={<Intervention />} />
             <Route path="/exitWithExcel" element={<ExitWithDownloadExcel />} />
+            <Route path="/lastactivity" element={<LastPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </ResultsProvider>

@@ -1,6 +1,33 @@
 import { CSVLink } from "react-csv";
 import { useContext } from "react";
 import { ResultsContext } from "../context/Results";
+import { useNavigate } from "react-router-dom";
+
+/*Adding CSS for Button*/
+
+const styles = {
+  container: {
+    display: "flex",
+    minHeight: "50vh",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+
+  button: {
+    display: "block",
+    outline: "0",
+    border: "0",
+    padding: "8px 32px",
+    backgroundColor: "#6666ff",
+    color: "white",
+    borderRadius: "6px",
+    cursor: "pointer",
+    fontSize: "20px",
+    fontWeight: "600",
+  },
+};
+
 const headers = [
   { label: "System Input", key: "systemInput" },
   { label: "User Input", key: "userInput" },
@@ -9,11 +36,11 @@ const headers = [
   { label: "Number of digits", key: "numOfDigits" },
 ];
 
-const styles = {
-  display: "flex",
-  gap: "8px",
-  flexDirection: "column",
-};
+// const styles = {
+//   display: "flex",
+//   gap: "8px",
+//   flexDirection: "column",
+// };
 
 const getScore = (array, key) => {
   const filteredResults = array.filter((item) => item.flowStatus === key);
@@ -36,6 +63,7 @@ const getScore = (array, key) => {
 };
 const ExitWithDownloadExcel = () => {
   const { results } = useContext(ResultsContext);
+  const navigate = useNavigate();
   console.log(results);
 
   const csvReport = {
@@ -46,12 +74,15 @@ const ExitWithDownloadExcel = () => {
   };
 
   return (
-    <div style={{ ...styles }}>
+    <div style={{ ...styles.container }}>
       <h2>Results</h2>
       <h4>Forward Score: {getScore(results, "FORWARD")}</h4>
       <h4>Reverse Score: {getScore(results, "REVERSE")}</h4>
       <h4>Please click the below link to download the results</h4>
       <CSVLink {...csvReport}>Download me</CSVLink>
+      <button style={styles.button} onClick={() => navigate("/lastactivity")}>
+        End
+      </button>
     </div>
   );
 };
