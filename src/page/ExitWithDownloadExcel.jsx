@@ -76,12 +76,21 @@ const ExitWithDownloadExcel = () => {
   return (
     <div style={{ ...styles.container }}>
       <h2>Results</h2>
-      <h4>Forward Score: {getScore(results, "FORWARD")}</h4>
-      <h4>Reverse Score: {getScore(results, "REVERSE")}</h4>
-      <h4>Please click the below link to download the results</h4>
+      <h4>
+        Your Immediate memory span for forward series is:{" "}
+        {getScore(results, "FORWARD")}
+      </h4>
+      <h4>
+        Your Immediate memory span for backward series is:{" "}
+        {getScore(results, "REVERSE")}
+      </h4>
+      <h4>
+        Click on link below for your experiment result indicating digits
+        presented in forward condition and backward condition
+      </h4>
       <CSVLink {...csvReport}>Download me</CSVLink>
       <button style={styles.button} onClick={() => navigate("/lastactivity")}>
-        End
+        Next
       </button>
     </div>
   );

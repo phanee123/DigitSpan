@@ -6,17 +6,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 32px;
+  gap: 18px;
 }
 .buttonContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap:12px;
+  gap: 12px;
   align-items: center;
   justify-content: center;
 }
-.buttonContainer>*:only-child{
+.buttonContainer > *:only-child {
   margin: 0 auto;
 }
 .button {
@@ -31,7 +31,7 @@
   font-size: 20px;
   font-weight: 600;
 }
-.buttonBack{
+.buttonBack {
   display: block;
   outline: 0;
   border: 0;
@@ -45,10 +45,37 @@
   font-weight: 600;
 }
 
-.buttonBack:hover{
-  color:#4d4dff
+.buttonAudio {
+  outline: 0;
+  border: 0;
+  padding: 8px 32px;
+  background-color: #ffff;
+  color: #000;
+  outline: 1px solid #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  width: 7rem;
+}
 
+.buttonBack:hover {
+  color: #4d4dff;
 }
 .button:hover {
   background-color: #4d4dff;
+}
+
+@media (max-width: 426px) {
+  .card {
+    width: 90vw;
+  }
+  .buttonContainer {
+    flex-direction: column;
+    /* justify-content: stretch;
+    align-items: center; */
+  }
+  .buttonContainer > * {
+    width: 100%;
+  }
 }
