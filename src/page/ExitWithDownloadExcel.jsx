@@ -85,7 +85,7 @@ const ExitWithDownloadExcel = () => {
         {getScore(results, "REVERSE")}
       </h4>
       <h4>
-        Click on link below for your experiment result indicating digits
+        Click on the link below for your experiment result indicating digits
         presented in forward condition and backward condition
       </h4>
       <CSVLink {...csvReport}>Download me</CSVLink>

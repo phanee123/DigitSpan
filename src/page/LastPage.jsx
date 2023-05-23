@@ -36,11 +36,6 @@ const heading = {
 const LastPage = () => {
   return (
     <div style={heading.heading}>
-      <h4>
-        You will have to present your results as per the table given and discuss
-        the results. conclusions and practical application should also be
-        written in your record book as per the format given below.
-      </h4>
       <div style={lastPageStyles.container}>
         <h4>
           Table 1, showing Immediate memory span of the subject for digits
