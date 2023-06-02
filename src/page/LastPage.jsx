@@ -39,7 +39,7 @@ const LastPage = () => {
       <div style={lastPageStyles.container}>
         <h4>
           Table 1, showing Immediate memory span of the subject for digits
-          presented in forward and backward manner.
+          presented in forward and backward manner."Changes Made"
         </h4>
         <table>
           <thead>
