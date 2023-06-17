@@ -51,8 +51,10 @@ const INSTRUCTION_STEPS_FORWARD = [
     stepIndex: 4,
     content: `
         <h4>Note that, this experiment has 2 conditions. Please pay attention as each condition has specific instructions.</h4>
+        <h5>గమనిక:ఈ ప్రయోగానికి 2 షరతులు ఉన్నాయి ప్రతి షరతుకు నిర్దిష్ట సూచనలు ఉన్నందున దయచేసి శ్రద్ధ వహించగలరు.</h5>
         <h4>Please be alert while doing this experiment, because the stimuli exposure time is
         only 1/10th of a second and you have to respond immediately.</h4>
+        <h5>దయచేసి ఈ ప్రయోగం చేస్తున్నప్పుడు అప్రమత్తంగా ఉండండి, ఎందుకంటే స్టిములై ఎక్స్పోజర్ టైం సెకనులో 1/10వ వంతు మాత్రమే ఉంటుంది మరియు మీరు వెంటనే స్పందించాలి.</h5>
         `,
     buttonLabel1: "Previous",
     buttonLabel2: "Next",
@@ -60,17 +62,20 @@ const INSTRUCTION_STEPS_FORWARD = [
   {
     stepIndex: 5,
     content: `
-        <h4>Now we will begin the experiment!</h4>        
-        <h2>Instructions</h2>
+        <h4>Now we will begin the experiment!<b> / </b>ఇప్పుడు ప్రయోగం ప్రారంభమవుతుంది</h4>
+               
+        <h2>Instructions <b> /</b>సూచనలు</h2>
         Condition 1 – Digits (Forward)</h2>
-        <p>Please sit comfortably and feel relaxed and look at the screen carefully.</p>
+        <p>Please sit comfortably and feel relaxed and look at the screen carefully.<b> / </b> దయచేసి మీరు సౌకర్యంగా కూర్చుని స్క్రీన్‌ని శ్రద్ధ వహించండి.</p>
         <p>You will be presented with few digits on the screen for a short period of time. 
-          Please respond in the same order as you have seen.</p>
+          Please respond in the same order as you have seen.<b> / </b>మీకు  కొంత వ్యవధి వరకు
+         స్క్రీన్‌పై కొన్ని అంకెలు ప్రదర్శించబడతాయి దయచేసి మీరు చూసిన అదే క్రమంలో స్పందించండి.</p>
         <p>You will see a keypad on the screen to enter your responses.
-         Do not forget to click on the <b>Submit</b> button after entering your responses. </p>
+         Do not forget to click on the <b>Submit</b> button after entering your responses.<b> / </b> 
+         మీ స్క్రీన్ పై కనబడిన కీప్యాడ్ ను ఉపయోగించి మీ స్పందనలను నమోదు చేసి, <b>Submit</b> బటన్ పై  క్లిక్ చేయండి. </p>
         <p>Continue the process till the experiment stops.
-        (If you fail 2 times continuously with a set of digits, condition 1 of the experiment will get terminated).</p>
-        <p>Respond as quickly and as accurately as possible.</p>
+        (If you fail 2 times continuously with a set of digits, condition 1 of the experiment will get terminated) <b> / </b> ఈ ప్రక్రియను ప్రయోగం ఆగిపోయే వరకు కొనసాగించండి. (మీరు వెనువెంటనే  2 సార్లు విఫలమైతే, ఈ ప్రయోగం యొక్క షరతు-1 రద్దు చేయబడుతుంది)</p>
+        <p>Respond as quickly and as accurately as possible.<b> / </b> వీలైనంత త్వరగా మరియు ఖచ్చితంగా స్పందించండి. </p>
         `,
     buttonLabel1: "Previous",
     buttonLabel2: "Next",
@@ -80,7 +85,7 @@ const INSTRUCTION_STEPS_FORWARD = [
   {
     stepIndex: 6,
     content: `<p>As soon as you click on the End instructions button,
-     The word "Ready" will appear on the screen and the experiment will begin.</p>`,
+     The word "Ready" will appear on the screen and the experiment will begin.<b> / </b> మీరు End Instructions బటన్‌పై క్లిక్ చేసిన వెంటనే, "రెడీ" (Ready) అనే పదం స్క్రీన్‌పై కనపడి, ఈ ప్రయోగం ప్రారంభమవుతుంది.</p>`,
     buttonLabel1: "Back",
     buttonLabel2: "End Instructions",
   },
@@ -92,15 +97,15 @@ const INSTRUCTION_STEPS_BACKWARD = [
     content: `
         <h2>Instructions</h2> 
         <h4>Condition 2 – Digits(Backward)</h4>
-        <p>Please sit comfortably and feel relaxed and look at the screen carefully.</p>
+        <p>Please sit comfortably and feel relaxed and look at the screen carefully./ దయచేసి మీరు సౌకర్యంగా కూర్చుని స్క్రీన్‌ని శ్రద్ధ వహించండి.</p>
         <p>You will be presented with few digits on the screen for a short period of time.
          You will have to respond by clicking on the numbers in a backward manner.
-         For example, if you have seen digits <b>5836</b> will have to answer it as <b>6385</b></p>
+         For example, if you have seen digits <b>5836</b> will have to answer it as <b>6385</b> / మీ స్క్రీన్‌పై కొంత వ్వ్యవధి వరకు  కొన్ని అంకెలు ప్రదర్శించబడతాయి. మీరు బ్యాక్ వర్డ్  (రివర్స్) పద్ధతిలో ఆ అంకెలను గుర్తించి క్లిక్ చేయండి. ఉదాహరణకు, మీరు 5836 అంకెలను చూసినట్లయితే, దానికి 6385 అని సమాధానం ఇవ్వాలి</p>
         <p>You will see a keypad on the screen to enter your responses.
-          Do not forget to click on the submit button after entering your responses. </p>
+          Do not forget to click on the submit button after entering your responses./ మీ స్క్రీన్ పై కనబడిన కీప్యాడ్ ను ఉపయోగించి మీ స్పందనలను నమోదు చేసి, <b>Submit</b> బటన్ పై  క్లిక్ చేయండి. </p>
         <p>Continue the process till the experiment stops. (If you fail 2 times continuously 
-         a set of digits, the experiment will get terminated).</p>
-        <p>Respond as quickly and as accurately as possible.</p> 
+         a set of digits, the experiment will get terminated)./ ఈ ప్రక్రియను ప్రయోగం ఆగిపోయే వరకు కొనసాగించండి. (మీరు వెనువెంటనే  2 సార్లు విఫలమైతే, ఈ ప్రయోగం యొక్క షరతు-1 రద్దు చేయబడుతుంది)</p>
+        <p>Respond as quickly and as accurately as possible./ వీలైనంత త్వరగా మరియు ఖచ్చితంగా స్పందించండి.</p> 
         `,
     buttonLabel2: "Next",
     voiceInstruction: sound2,
@@ -108,7 +113,7 @@ const INSTRUCTION_STEPS_BACKWARD = [
   {
     stepIndex: 2,
     content: `<p>As soon as you click on the End instructions button,
-     The word "Ready" will appear on the screen and Condition-2 of the experiment will begin.</p>`,
+     The word "Ready" will appear on the screen and Condition-2 of the experiment will begin./ <b>End Instructions</b> బటన్‌పై క్లిక్ చేసిన వెంటనే, "రెడీ" అనే పదం స్క్రీన్‌పై కనపడి ఈ  ప్రయోగం యొక్క కండిషన్-2 ప్రారంభమవుతుంది.</p>`,
     buttonLabel1: "Back",
     buttonLabel2: "End Instructions",
   },
